@@ -1,9 +1,22 @@
-% extends "layout.html" %}
+{% extends "layout.html" %}
 
 {% block title %}
-    Apology
+Add Tasks
 {% endblock %}
 
 {% block main %}
-    <img alt="{{ top }}" class="border" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://i.imgur.com/CsCgN7Ll.png"/>
+<form action="/add" method="post">
+    <input id="task" name="task" type="text" placeholder="Task Name">
+    <input id="submit" type="submit" disabled>
+</form>
+<script>
+    document.querySelector('#task').onkeyup = function() {
+    if (document.querySelector('#task').value == '') {
+            document.querySelector('#submit').disabled = true;
+    }
+    else{
+        document.querySelector('#submit').disabled = false;
+    }
+    }
+</script>
 {% endblock %}
