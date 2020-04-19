@@ -1,0 +1,6 @@
+CREATE TABLE 'registrants' (
+'id' PRIMARY INTEGER KEY,
+'username' VARCHAR(255),
+'hash' TEXT NOT NULL)
+)
+;
